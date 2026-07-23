@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Hezki's Private Space</title>
+  <style>
+    body.kenzie {
+      font-family: Arial, sans-serif;
+      background: #222;
+      color: #fff;
+      text-align: center;
+      padding: 40px;
+    }
+    .yosef {
+      background: rgba(255,255,255,0.1);
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 0 20px rgba(0,0,0,0.5);
+      width: 800px;
+      margin: auto;
+    }
+    .hls2026 {
+      margin: 10px;
+      padding: 12px 20px;
+      border: none;
+      border-radius: 6px;
+      background-color: #4CAF50;
+      color: white;
+      cursor: pointer;
+      font-size: 16px;
+    }
+    .hls2026:hover {
+      background-color: #45a049;
+    }
+    .game-container {
+      margin-top: 30px;
+    }
+    .kiki {
+      margin: 10px;
+      padding: 10px;
+      font-size: 16px;
+    }
+    .welovegac {
+      margin-top: 20px;
+    }
+    .welovegac a {
+      color: #4CAF50;
+      text-decoration: none;
+    }
+    .welovegac a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body class="kenzie">
+  <div class="yosef">
+    <h1>Welcome Back Admin Hezki</h1>
+    <p>Choose a mini‑game to play:</p>
+    <button class="hls2026" onclick="showGame('clicker')">Click Counter</button>
+    <button class="hls2026" onclick="showGame('guess')">Guess the Number</button>
+    <button class="hls2026" onclick="showGame('reaction')">Reaction Time</button>
+    <button class="hls2026" onclick="showGame('runner')">Mini Runner</button>
+
+    <div id="game-area" class="game-container"></div>
+
+    <p class="welovegac"><a href="Home.html">Logout to Home</a></p>
+  </div>
+
+  <script>
+    function showGame(game) {
+      const area = document.getElementById('game-area');
+      area.innerHTML = "";
+
+      if (game === 'clicker') {
+        area.innerHTML = `
+          <h2>Click Counter Game</h2>
+          <p>Click as many times as you can in 10 seconds!</p>
+          <button id="click-btn" class="hls2026">Click Me!</button>
+          <p id="click-result"></p>
+        `;
+        let count = 0;
+        let started = false;
+        document.getElementById("click-btn").addEventListener("click", () => {
+          if (!started) {
+            started = true;
+            setTimeout(() => {
+              document.getElementById("click-result").textContent = "You clicked " + count + " times!";
+            }, 10000);
+          }
+          count++;
+        });
+      }
+
+      if (game === 'guess') {
+        area.innerHTML = `
+          <h2>Guess the Number</h2>
+          <p>Guess a number between 1 and 100!</p>
+          <input type="number" id="guess-input" class="kiki">
+          <button id="guess-btn" class="hls2026">Guess</button>
+          <p id="guess-result"></p>
+        `;
+        let secret = Math.floor(Math.random() * 100) + 1;
+        document.getElementById("guess-btn").addEventListener("click", () => {
+          const val = parseInt(document.getElementById("guess-input").value);
+          if (val === secret) {
+            document.getElementById("guess-result").textContent = "🎉 Correct!";
+          } else if (val < secret) {
+            document.getElementById("guess-result").textContent = "Too low!";
+          } else {
+            document.getElementById("guess-result").textContent = "Too high!";
+          }
+        });
+      }
+
+      if (game === 'reaction') {
+        area.innerHTML = `
+          <h2>Reaction Time Test</h2>
+          <p>Wait for the box to turn green, then click!</p>
+          <div id="reaction-box" style="width:200px;height:200px;background:red;margin:auto;"></div>
+          <p id="reaction-result"></p>
+        `;
+        const box = document.getElementById("reaction-box");
+        let start;
+        setTimeout(() => {
+          box.style.background = "green";
+          start = Date.now();
+        }, Math.random() * 3000 + 2000);
+        box.addEventListener("click", () => {
+          if (box.style.background === "green") {
+            const time = Date.now() - start;
+            document.getElementById("reaction-result").textContent = "Your reaction time: " + time + " ms";
+          }
+        });
+      }
+
+      if (game === 'runner') {
+        area.innerHTML = `
+          <h2>Mini Runner</h2>
+          <p>Press space to jump over the obstacle!</p>
+          <canvas id="runner-canvas" width="400" height="200" style="background:#eee;"></canvas>
+        `;
+        const canvas = document.getElementById("runner-canvas");
+        const ctx = canvas.getContext("2d");
+        let playerY = 150, velocity = 0, gravity = 0.5;
+        let obstacleX = 400;
+        function draw() {
+          ctx.clearRect(0,0,400,200);
+          ctx.fillStyle = "blue";
+          ctx.fillRect(50, playerY, 20, 20);
+          ctx.fillStyle = "red";
+          ctx.fillRect(obstacleX, 160, 20, 40);
+          playerY += velocity;
+          velocity += gravity;
+          if (playerY > 150) { playerY = 150; velocity = 0; }
+          obstacleX -= 5;
+          if (obstacleX < -20) obstacleX = 400;
+          if (obstacleX < 70 && obstacleX > 30 && playerY > 130) {
+            ctx.fillStyle = "black";
+            ctx.font = "20px Arial";
+            ctx.fillText("Game Over!", 150, 100);
+          } else {
+            requestAnimationFrame(draw);
+          }
+        }
+        draw();
+        document.addEventListener("keydown", e => {
+          if (e.code === "Space" && playerY === 150) {
+            velocity = -10;
+          }
+        });
+      }
+    }
+  </script>
+</body>
+</html>
