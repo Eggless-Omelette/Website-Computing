@@ -1,0 +1,514 @@
+* {
+  box-sizing: border-box;
+}
+
+.navwrapper {
+  max-width: 95vw;
+  margin: 0 auto;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.navbar {
+  width: 100%;
+  background: white;
+  display: flex;
+  align-items: center;
+  padding: 12px 25px;
+}
+
+.logo {
+  margin-right: 100px;
+}
+
+.logo img {
+  height: 45px;
+}
+
+.navlinks {
+  list-style: none;
+  display: flex;
+  gap: 65px;
+  margin: 0;
+  padding: 0;
+}
+
+.navlinks li a {
+  text-decoration: none;
+  color: black;
+  font-weight: 600;
+  font-size: 18px;
+  font-family: inherit;
+}
+
+.goldtext {
+  color: #D4AF37 !important;
+}
+
+.searchcontainer {
+  margin-left: auto;
+  margin-right: 45px;
+  flex-shrink: 0;
+}
+
+.searchcontainer input {
+  width: 180px;
+  max-width: 180px;
+  padding: 8px 12px;
+  padding-right: 35px;
+  border: 1px solid #aaa;
+  border-radius: 5px;
+  font-size: 14px;
+  background-image: url('Imagine_Dragons/Search_Bar.png');
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+  background-size: 18px;
+}
+
+.righticon {
+  width: 40px;
+  height: 40px;
+  margin-right: 55px;
+  flex-shrink: 0;
+}
+
+.righticon img {
+  height: 40px;
+  width: auto;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+}
+
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 999;
+}
+
+.image {
+  width: 100%;
+  height: auto;
+  display: block;
+  margin: 0;
+  padding: 0;
+  cursor: pointer;
+  margin-top: 50px;
+}
+
+.link {
+  display: block;
+}
+
+.sectiondivider {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 40px 0;
+}
+
+.sectiondivider::before,
+.sectiondivider::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background-color: #ccc;
+}
+
+.sectiondivider span {
+  padding: 0 20px;
+  font-size: 20px;
+  font-weight: 600;
+  color: #333;
+  letter-spacing: 2px;
+  white-space: nowrap;
+}
+
+.kenbaz {
+  position: relative;
+  width: 100%;
+  margin: 40px 0;
+  overflow: hidden;
+}
+
+.kenbazpro {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  display: flex;
+  gap: 40px;
+}
+
+.kenbazpromax {
+  width: 350px;
+  height: auto;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.kenbazpromax:hover {
+  transform: scale(1.05);
+}
+
+.productrow {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap;
+  margin: 60px 0;
+  padding: 0 20px;
+}
+
+.productcard img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  transition: 0.2s ease;
+}
+
+.productcard:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+}
+
+.productcard {
+  width: 250px;
+  text-decoration: none;
+  color: black;
+  border: 2px solid #ddd;
+  border-radius: 10px;
+  overflow: hidden;
+  padding-bottom: 15px;
+  transition: 0.2s ease;
+}
+
+.productcard img {
+  width: 100%;
+  height: 250px;
+  object-fit: contain;
+  background-color: #f5f5f5;
+  border-radius: 10px 10px 0 0;
+  padding: 10px;
+}
+
+.productcard h3 {
+  margin: 10px 0 5px;
+  font-size: 16px;
+  font-weight: 600;
+  text-align: left;
+  padding: 0 10px;
+}
+
+.productcard .price {
+  font-size: 14px;
+  font-weight: 500;
+  color: #555;
+  text-align: left;
+  padding: 0 10px;
+}
+
+.discountbox {
+  background-color: #bfbfbf;
+  color: white;
+  padding: 6px 10px;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 600;
+  width: fit-content;
+  margin: 10px 10px 40px;
+  
+}
+
+.tagslabel {
+  font-size: 14px;
+  font-weight: 700;
+  color: #777;
+  margin: 0 10px 10px;
+}
+
+.tagbox {
+  background-color: #e5e5e5;
+  padding: 6px 10px;
+  border-radius: 8px;
+  font-size: 8px;
+  color: #333;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.tagsrow {
+  display: flex;
+  gap: 5px;
+  width: 100%;
+  margin: 0 10px 10px;
+  justify-content: flex-start;
+}
+
+.productcard {
+  position: relative;
+  background-image: url("Imagine_Dragons/Basket.png");
+  background-repeat: no-repeat;
+  background-position: calc(100% + 35px) calc(100% + 35px);
+  background-size: 165px;
+  background-color: white;
+  overflow: hidden;
+  text-align: left;
+}
+
+.productcard:nth-child(3),
+.productcard:nth-child(5) {
+  background-image: url("Imagine_Dragons/Pongping.png");
+}
+
+.heart {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 22px;
+  height: 22px;
+  background-image: url("Imagine_Dragons/Heart\ \(1\).png");
+  background-size: 100% 100%;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.heart:hover {
+  background-image: url("Imagine_Dragons/Heart\ \(2\).png");
+}
+
+.section {
+  position: relative;
+  width: 100%;
+  height: 450px;
+  overflow: hidden;
+}
+
+.section::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    rgba(0, 0, 0, 0.65),
+    rgba(0, 0, 0, 0.25)
+  );
+  pointer-events: none;
+  z-index: 2;
+}
+
+.bottomcontent {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 3;
+}
+
+.bg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.bottomlogo {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 400px;
+  transform: translate(-50%, -50%);
+  opacity: 0.95;
+}
+
+.bottomtext {
+  position: absolute;
+  top: 10px;
+  left: 40px;
+  width: 450px;
+  color: white;
+  text-align: left;
+  z-index: 5;
+}
+
+.bottomtext h2 {
+  font-size: 40px;
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+
+.bottomtext p {
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+.bottominfo {
+  position: absolute;
+  bottom: 10px;
+  left: 40px;
+  display: flex;
+  gap: 60px;
+  z-index: 5;
+}
+
+.infoblock {
+  color: white;
+  width: 220px;
+}
+
+.infoblock h3 {
+  font-size: 22px;
+  margin-bottom: 6px;
+}
+
+.infoline {
+  width: 100%;
+  height: 2px;
+  background-color: white;
+  margin-bottom: 6px;
+}
+
+.infoblock p {
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+.surveyrow {
+  position: absolute;
+  top: 65%;
+  left: 30%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  z-index: 5;
+}
+
+.contactbox {
+  position: absolute;
+  top: 50%;
+  right: 40px;
+  transform: translateY(-50%);
+  width: 420px;
+  padding: 30px 32px;
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 18px rgba(0,0,0,0.25);
+  z-index: 5;
+}
+
+.contactbox h3 {
+  font-size: 26px;
+  margin-bottom: 8px;
+  color: #222;
+}
+
+.contactdesc {
+  font-size: 14px;
+  color: #555;
+  margin-bottom: 18px;
+  line-height: 1.4;
+}
+
+.contactinput {
+  width: 100%;
+  padding: 10px 12px;
+  margin-bottom: 12px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+}
+
+.contactmessage {
+  width: 100%;
+  height: 90px;
+  padding: 10px 12px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+  resize: none;
+  margin-bottom: 15px;
+}
+
+.namerow {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.contactinput.half {
+  width: 100%;
+}
+
+.contactinput,
+.contactmessage {
+  padding: 14px 16px;
+  box-sizing: border-box;
+}
+
+.surveybox {
+  width: 350px;
+  padding: 12px 15px;
+  border-radius: 8px;
+  border: none;
+  font-size: 14px;
+  background-color: white;
+  outline: none;
+}
+
+.surveyguy {
+  width: 90px;
+  height: auto;
+}
+
+.footer {
+  width: 100%;
+  background-color: #2e2e2e;
+  padding: 20px 0;
+}
+
+.footerline {
+  width: 100%;
+  height: 2px;
+  background-color: #bfbfbf;
+  margin-bottom: 15px;
+}
+
+.footertext {
+  font-size: 14px;
+  color: #bfbfbf;
+}
+
+.footerinner {
+  width: 90%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footerleft,
+.footerright {
+  color: #f1f1f1;
+  font-size: 14px;
+}
+
+.righticon img {
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+.righticon img:hover {
+  transform: scale(1.05);
+}
